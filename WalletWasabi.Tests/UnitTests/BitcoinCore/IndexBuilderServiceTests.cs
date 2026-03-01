@@ -209,7 +209,7 @@ public class IndexBuilderServiceTests
 		await node.Rpc.GenerateToAddressAsync(4, dummyKey.GetAddress(ScriptPubKeyType.Segwit, Network.RegTest));
 
 		// Give time for reorg processing
-		await Task.Delay(TimeSpan.FromSeconds(0.5));
+		await Task.Delay(TimeSpan.FromSeconds(2));
 
 		// Verify post-reorg state
 		bestBlockHash = await node.Rpc.GetBestBlockHashAsync();
